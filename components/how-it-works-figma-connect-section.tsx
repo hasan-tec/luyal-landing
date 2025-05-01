@@ -23,7 +23,21 @@ export function HowItWorksFigmaConnectSection() {
             <span className="w-3 h-3 rounded-full bg-[#627DAF] inline-block" />
             <span className="font-medium text-[16px] leading-[24px] text-[#111827] tracking-[0.01em]" style={{fontFamily: 'Inter, Arial, sans-serif'}}>{t("howitworks.connect.badge")}</span>
           </div>
-          <h3 className="font-vc-nudge font-medium text-[48px] leading-[58px] tracking-[0.0375em] text-[#111827] mb-2" style={{ fontWeight: 500, letterSpacing: '-1.8px', direction: isRTL ? 'rtl' : 'ltr'}}>{t("howitworks.connect.heading")}</h3>
+        
+            <h3
+            className="font-vc-nudge font-medium text-[32px] sm:text-[40px] md:text-[48px] leading-[1.15] lg:w-max md:w-full md:break-words tracking-[0.0375em] text-[#111827] mb-2"
+            style={{ fontWeight: 500, letterSpacing: '-1.8px', direction: isRTL ? 'rtl' : 'ltr' }}
+            >
+            {t("howitworks.connect.heading")
+                .split("\n")
+                .map((line, idx, arr) => (
+                <span key={idx}>
+                    {line}
+                    {idx !== arr.length - 1 && <br />}
+                </span>
+                ))}
+            </h3>
+
           <div className="font-vc-nudge font-medium text-[16px] leading-[21px] tracking-[0.018em] text-[#111827] mb-2">{t("howitworks.connect.subheading")}</div>
           <p className="font-semibold text-[16px] leading-[21px] text-[#4B5563] mb-8" style={{fontFamily: 'Inter, Arial, sans-serif'}}>{t("howitworks.connect.desc")}</p>
           <button className="px-8 py-4 border border-[#E5E7EB] rounded-[8px] bg-white shadow font-semibold text-[16px] leading-[24px] text-[#111827] hover:bg-[#f6fafd] transition" style={{fontFamily: 'Inter, Arial, sans-serif'}}>{t("howitworks.connect.cta")}</button>

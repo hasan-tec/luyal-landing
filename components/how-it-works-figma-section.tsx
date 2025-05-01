@@ -62,7 +62,7 @@ export default function HowItWorksFigmaSection() {
             <span className="w-3 h-3 rounded-full bg-[#7EA1C4] inline-block" />
             <span className="font-medium text-[16px] leading-[24px] text-[#232b38] tracking-[0.01em]" style={{fontFamily: 'Inter, Arial, sans-serif'}}>{t("howitworks.badge")}</span>
           </div>
-          <h3 className="font-vc-nudge font-medium text-[48px] leading-[58px] w-max tracking-[0.0375em] text-[#232b38] mb-4" style={{ fontWeight: 500, letterSpacing: '-2.8px', direction: isRTL ? 'rtl' : 'ltr'}}>
+          <h3 className="font-vc-nudge font-medium text-[48px] leading-[58px] lg:w-max md:w-full md:break-words tracking-[0.0375em] text-[#232b38] mb-4" style={{ fontWeight: 500, letterSpacing: '-2.8px', direction: isRTL ? 'rtl' : 'ltr'}}>
             {t("howitworks.heading").split("\n").map((line, idx) => (
               <span key={idx}>
                 {line}

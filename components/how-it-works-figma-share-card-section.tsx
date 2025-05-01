@@ -12,7 +12,7 @@ export function HowItWorksFigmaShareCardSection() {
             <span className="w-3 h-3 rounded-full bg-[#627DAF] inline-block" />
             <span className="font-medium text-[16px] leading-[24px] text-[#232b38] tracking-[0.01em]" style={{fontFamily: 'Inter, Arial, sans-serif'}}>{t("howitworks.share.badge")}</span>
           </div>
-          <h3 className="font-vc-nudge font-medium text-[48px] leading-[58px] w-max tracking-[0.0375em] text-[#232b38] mb-2" style={{ fontWeight: 500, letterSpacing: '-2.8px', direction: isRTL ? 'rtl' : 'ltr'}}>{t("howitworks.share.heading").split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}</h3>
+          <h3 className="font-vc-nudge font-medium text-[48px] leading-[58px] lg:w-max md:w-full md:break-words tracking-[0.0375em] text-[#232b38] mb-2" style={{ fontWeight: 500, letterSpacing: '-2.8px', direction: isRTL ? 'rtl' : 'ltr'}}>{t("howitworks.share.heading").split("\n").map((line, i) => <span key={i}>{line}<br/></span>)}</h3>
           <div className="font-vc-nudge font-medium text-[16px] leading-[21px] tracking-[0.018em] text-[#232b38] mb-2">{t("howitworks.share.subheading")}</div>
           <p className="font-semibold text-[16px] leading-[21px] text-[#4B5563] mb-8" style={{fontFamily: 'Inter, Arial, sans-serif'}}>{t("howitworks.share.desc")}</p>
           <button className="px-8 py-4 border border-[#E5E7EB] rounded-[18px] bg-white shadow font-semibold text-[16px] leading-[24px] text-[#232b38] hover:bg-[#f6fafd] transition" style={{fontFamily: 'Inter, Arial, sans-serif'}}>{t("howitworks.share.cta")}</button>

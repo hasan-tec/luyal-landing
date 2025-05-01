@@ -243,7 +243,7 @@ const translations = {
 
     // How It Works Connect Section
     "howitworks.connect.badge": "connect & see result",
-    "howitworks.connect.heading": "Connect with Customers and See Instant Results",
+    "howitworks.connect.heading": "Connect with\nCustomers and See\nInstant Results",
     "howitworks.connect.subheading": "Connect and Grow Fast",
     "howitworks.connect.desc": "Sign up for Loyally, pick the perfect card for your store, and design it easily with our fun templates.",
     "howitworks.connect.cta": "Learn More",
