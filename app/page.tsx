@@ -8,7 +8,12 @@ import LogoGrid from "@/components/logo-grid"
 import { useLanguage } from "@/context/language-context"
 import ResultsSection from "@/components/results-section"
 import MobileNav from "@/components/mobile-navbar"
-import HowItWorksSection from "@/components/how-it-works-section"
+import HowItWorksFigmaSection from "@/components/how-it-works-figma-section"
+import { HowItWorksFigmaTestimonialSection } from "@/components/how-it-works-figma-testimonial-section"
+import { HowItWorksFigmaPlansSection } from "@/components/how-it-works-figma-plans-section"
+import { FaqSection } from "@/components/faq-section"
+import  ContactSection  from "@/components/contact-section"
+import  FooterFigma  from "@/components/footer-figma"
 
 export default function Home() {
   const { t, isRTL } = useLanguage()
@@ -380,7 +385,12 @@ export default function Home() {
       {/* Results Section */}
       <ResultsSection />
 
-      
+      <HowItWorksFigmaSection />
+      <HowItWorksFigmaTestimonialSection />
+      <HowItWorksFigmaPlansSection />
+      <FaqSection />
+      <ContactSection />
+      <FooterFigma/>
     </div>
   )
 }
