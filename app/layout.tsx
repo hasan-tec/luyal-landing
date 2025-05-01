@@ -3,6 +3,9 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Poppins, Inter } from "next/font/google"
 import { LanguageProvider } from "@/context/language-context"
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800"],
@@ -27,6 +30,7 @@ export const metadata: Metadata = {
     generator: 'v0.dev'
 }
 
+// ...existing code...
 export default function RootLayout({
   children,
 }: {
@@ -34,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={`${poppins.variable} ${inter.variable} font-poppins`}>
+      <body className={`${GeistSans.variable} ${poppins.variable} ${inter.variable} font-geist-sans`}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

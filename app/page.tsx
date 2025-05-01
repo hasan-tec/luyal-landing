@@ -7,7 +7,8 @@ import LanguageSwitcher from "@/components/language-switcher"
 import LogoGrid from "@/components/logo-grid"
 import { useLanguage } from "@/context/language-context"
 import ResultsSection from "@/components/results-section"
-import HamburgerMenu from "@/components/hamburger-menu"
+import MobileNav from "@/components/mobile-navbar"
+import HowItWorksSection from "@/components/how-it-works-section"
 
 export default function Home() {
   const { t, isRTL } = useLanguage()
@@ -145,7 +146,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Menu - Simplified */}
+        {/* Mobile Menu - New simplified component */}
         <div className="md:hidden flex items-center gap-3 z-50">
           <LanguageSwitcher />
           <button className="flex items-center text-[#111827] font-medium text-sm">
@@ -164,7 +165,7 @@ export default function Home() {
             </svg>
             {t("nav.login")}
           </button>
-          <HamburgerMenu />
+          <MobileNav />
         </div>
       </header>
 
@@ -201,9 +202,9 @@ export default function Home() {
           }}
         ></div>
 
-        <div className="container mx-auto px-3 sm:px-4 pt-8 sm:pt-12 md:pt-16 pb-10 sm:pb-16 md:pb-20 relative z-10">
+        <div className="container mx-auto px-3 sm:px-4 pt-4 sm:pt-8 md:pt-16 pb-4 sm:pb-10 md:pb-20 relative z-10">
           {/* Pill Highlight */}
-          <div className="flex justify-center mb-5 sm:mb-8">
+          <div className="flex justify-center mb-3 sm:mb-5">
             <div className="inline-flex items-center px-3 sm:px-5 py-1.5 sm:py-2 bg-white border border-[#e5e7eb] rounded-full shadow-sm">
               <Image
                 src="/images/sparkling.png"
@@ -226,7 +227,7 @@ export default function Home() {
           </div>
 
           {/* Main Heading - Improved for consistent display across devices */}
-          <div className="text-center mb-6 sm:mb-8 md:mb-10 w-full">
+          <div className="text-center mb-3 sm:mb-6 md:mb-10 w-full">
             <h1 className="font-bold text-[#111827] leading-tight tracking-tight w-full mx-auto">
               {isRTL ? (
                 <>
@@ -354,14 +355,14 @@ export default function Home() {
           </div>
 
           {/* Subtitle */}
-          <div className="w-full mx-auto text-center mb-6 sm:mb-8 md:mb-10 px-1 sm:px-4">
+          <div className="w-full mx-auto text-center mb-4 sm:mb-6 md:mb-10 px-1 sm:px-4">
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#4b5563] max-w-3xl mx-auto">
               {t("hero.subtitle")}
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
             <button className="bg-[#627daf] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-[#5670a0] transition-colors flex items-center font-medium w-full sm:w-auto justify-center text-sm sm:text-base">
               {t("hero.startFree")}
               <ArrowIcon className={`h-4 w-4 sm:h-5 sm:w-5 ${isRTL ? "mr-1.5 sm:mr-2" : "ml-1.5 sm:ml-2"}`} />
@@ -378,6 +379,8 @@ export default function Home() {
 
       {/* Results Section */}
       <ResultsSection />
+
+      
     </div>
   )
 }

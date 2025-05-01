@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Avenir Arabic';
+  src: url('/fonts/avenir-arabic/AvenirArabic.woff2') format('woff2'),
+       url('/fonts/avenir-arabic/AvenirArabic.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -11,10 +20,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -104,20 +109,12 @@ body {
   }
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(to bottom, #ffffff, #f9fafb);
-  overflow-x: hidden;
+html[dir="ltr"] body {
+  font-family: "GeistSans", "Poppins", Arial, Helvetica, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Poppins", sans-serif;
-  letter-spacing: -0.025em;
+html[dir="rtl"] body {
+  font-family: 'Avenir Arabic', sans-serif !important;
 }
 
 /* Navigation layout adjustments */
@@ -477,90 +474,64 @@ header .lg\:hidden > div > div[role="menu"] {
   }
 }
 
-/* Add these styles at the end of the file */
-
-/* Hamburger menu animations */
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+/* Improved sidebar menu styles */
+.sidebar-open {
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+/* Ensure the sidebar has proper z-index and positioning */
+.fixed.inset-0.z-\[100\] {
+  z-index: 100;
 }
 
-@keyframes slideOutRight {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
+/* Ensure the sidebar content is properly scrollable */
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
 }
 
-@keyframes slideOutLeft {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
+/* Simple sidebar menu styles */
+.sidebar-open {
+  overflow: hidden;
+}
+
+/* Add padding to the bottom of the page to account for any fixed elements */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 1rem;
   }
 }
 
-/* RTL/LTR specific menu animations */
-html[dir="rtl"] .menu-slide-in {
-  animation: slideInLeft 0.3s forwards;
-}
-
-html[dir="rtl"] .menu-slide-out {
-  animation: slideOutLeft 0.3s forwards;
-}
-
-html[dir="ltr"] .menu-slide-in {
-  animation: slideInRight 0.3s forwards;
-}
-
-html[dir="ltr"] .menu-slide-out {
-  animation: slideOutRight 0.3s forwards;
-}
-
-/* Remove bottom padding since we no longer have the bottom navigation */
+/* Remove bottom padding on mobile since we removed the bottom navigation */
 @media (max-width: 768px) {
   body {
     padding-bottom: 0;
   }
 }
 
-/* Add these styles at the end of the file to ensure proper RTL/LTR support in the hamburger menu */
-
-/* Hamburger menu RTL/LTR specific styles */
-html[dir="rtl"] .hamburger-menu-content {
+/* RTL specific sidebar menu styles */
+html[dir="rtl"] .sidebar-menu-nav a,
+html[dir="rtl"] .sidebar-menu-footer button {
   text-align: right;
 }
 
-html[dir="ltr"] .hamburger-menu-content {
+html[dir="ltr"] .sidebar-menu-nav a,
+html[dir="ltr"] .sidebar-menu-footer button {
   text-align: left;
 }
 
-/* Ensure proper spacing in the hamburger menu */
-.hamburger-menu-item {
-  width: 100%;
-  display: flex;
+/* Add to styles/globals.css */
+.ltr-sheet-close .absolute.right-4.top-4 {
+  right: 1rem;
+  left: auto;
+}
+.rtl-sheet-close .absolute.right-4.top-4 {
+  left: 1rem;
+  right: auto;
+  direction: ltr;
 }
 
-html[dir="rtl"] .hamburger-menu-item {
-  justify-content: flex-end;
-}
-
-html[dir="ltr"] .hamburger-menu-item {
-  justify-content: flex-start;
+html[dir="rtl"] {
+  font-family: 'Avenir Arabic', sans-serif !important;
 }
