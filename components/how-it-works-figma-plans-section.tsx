@@ -7,6 +7,7 @@ export function HowItWorksFigmaPlansSection() {
   const premiumFeatures = t("plans.premium.features")
   return (
     <section
+      id="pricing"
       className="w-full flex flex-col items-center bg-[#eaf1fc] py-10 sm:py-16 md:py-20 lg:py-24"
       dir={isRTL ? "rtl" : undefined}
     >

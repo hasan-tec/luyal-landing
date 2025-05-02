@@ -36,11 +36,11 @@ export default function MobileNavbar() {
           </div>
           <nav className="flex flex-col gap-2 px-4 py-6">
             <a href="#" className="text-lg font-medium text-[#111827] py-2">{t("nav.home")}</a>
-            <a href="#" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.features")}</a>
-            <a href="#" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.pricing")}</a>
-            <a href="#" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.solution")}</a>
-            <a href="#" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.faq")}</a>
-            <a href="#" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.contact")}</a>
+            <a href="#features" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.features")}</a>
+            <a href="#pricing" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.pricing")}</a>
+            <a href="#howitworks" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.solution")}</a>
+            <a href="#faq" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.faq")}</a>
+            <a href="#contact" className="text-lg font-medium text-[#4b5563] py-2">{t("nav.contact")}</a>
           </nav>
           <div className="px-4 py-4 border-t border-gray-100 flex flex-col gap-3">
             <Button variant="outline" className="flex items-center justify-center w-full">

@@ -100,37 +100,46 @@ export default function FooterFigma() {
               {t("footer.home") || "Home"}
             </a>
             <a
-              href="#"
+              href="#features"
               className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
               style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
             >
               {t("footer.features") || "Features"}
             </a>
             <a
-              href="#"
+              href="#pricing"
               className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
               style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
             >
               {t("footer.pricing") || "Pricing"}
             </a>
             <a
-              href="#"
+              href="#howitworks"
+              className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
+              style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
+            >
+              {t("footer.solution") || "Solutions"}
+            </a>
+            <a
+              href="#faq"
               className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
               style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
             >
               {t("footer.faqs") || "Faqs"}
             </a>
-          </div>
-          <div className="flex flex-col gap-1 sm:gap-2">
-            <span
-              className="font-medium text-base sm:text-lg md:text-xl leading-normal text-white mb-1 sm:mb-2"
+            <a
+              href="#contact"
+              className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
               style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
             >
-              {t("footer.service") || "Service"}
-            </span>
+              {t("footer.contact") || "Contact"}
+            </a>
+          </div>
+          <div className="flex flex-col gap-1 sm:gap-2">
+           
             <a
               href="#"
-              className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
+              className=" font-medium text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
               style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
             >
               {t("footer.shopify") || "Shopify"}

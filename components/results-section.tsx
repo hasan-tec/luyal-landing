@@ -32,7 +32,7 @@ export default function ResultsSection() {
   ]
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white">
+    <section id="features" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="w-full max-w-[90%] sm:max-w-[85%] md:max-w-[1200px] mx-auto px-4">
         <div
           className={`flex flex-col md:flex-row justify-between items-start mb-8 md:mb-12 ${isRTL ? "rtl" : ""}`}

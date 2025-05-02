@@ -144,9 +144,14 @@ const translations = {
     "footer.features": "المميزات",
     "footer.pricing": "الأسعار",
     "footer.faqs": "الأسئلة الشائعة",
-    "footer.shopify": "شوبيفاي",
-    "footer.wordpress": "ووردبريس",
-    "footer.uiux": "تصميم واجهة وتجربة المستخدم",
+
+    "footer.solution": "الحلول",
+
+
+    "footer.shopify": "من نحن",
+    "footer.wordpress": "سياسة الخصوصية",
+    "footer.uiux": "الشروط والأحكام",
+
     "footer.phone": "(406) 555-0120",
     "footer.email": "mangcoding123@gmail.com",
     "footer.address": "2972 شارع ويستهايمر، سانتا آنا، إلينوي 85486",
@@ -305,10 +310,13 @@ const translations = {
     "footer.home": "Home",
     "footer.features": "Features",
     "footer.pricing": "Pricing",
-    "footer.faqs": "Faqs",
-    "footer.shopify": "Shopify",
-    "footer.wordpress": "WordPress",
-    "footer.uiux": "UI/UX Design",
+    "footer.faqs": "Faqs",    
+    "footer.solution": "Solutions",
+ 
+   "footer.shopify": "About Us",
+   "footer.wordpress": "Privacy Policy",
+   "footer.uiux": "Terms and Conditions",
+
     "footer.phone": "(406) 555-0120",
     "footer.email": "mangcoding123@gmail.com",
     "footer.address": "2972 Westheimer Rd. Santa Ana, Illinois 85486",

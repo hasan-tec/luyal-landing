@@ -17,7 +17,9 @@ export default function ContactSection() {
   ]
 
   return (
-    <section className="py-10 sm:py-12 md:py-16 lg:py-24 bg-white contact-section" dir={isRTL ? "rtl" : "ltr"}>
+    <section 
+      id="contact"
+    className="py-10 sm:py-12 md:py-16 lg:py-24 bg-white contact-section" dir={isRTL ? "rtl" : "ltr"}>
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8">
         <div className="mb-6">
           {/* Heading */}

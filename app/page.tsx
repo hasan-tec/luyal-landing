@@ -59,31 +59,31 @@ export default function Home() {
             {t("nav.home")}
           </a>
           <a
-            href="#"
+            href="#features"
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.features")}
           </a>
           <a
-            href="#"
+            href="#pricing"
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.pricing")}
           </a>
           <a
-            href="#"
+            href="#howitworks"
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.solution")}
           </a>
           <a
-            href="#"
+            href="#faq"
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.faq")}
           </a>
           <a
-            href="#"
+            href="#contact"
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.contact")}
@@ -169,7 +169,7 @@ export default function Home() {
             className="absolute"
             style={{
               left: "-8vw",
-              top: "8vh",
+              top: "4vh", // moved up from 8vh to 4vh
               width: "38vw",
               height: "28vw",
               minWidth: 260,
@@ -182,12 +182,12 @@ export default function Home() {
               zIndex: 1,
             }}
           />
-          {/* Right blue blur: move it more to the left and down, less top-right */}
+          {/* Right blue blur: move it more to the left and up */}
           <div
             className="absolute"
             style={{
-              right: "10vw", // move away from the edge
-              top: "18vh", // move down
+              right: "10vw",
+              top: "10vh", // moved up from 18vh to 10vh
               width: "22vw",
               height: "22vw",
               minWidth: 120,

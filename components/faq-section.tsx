@@ -23,6 +23,7 @@ export function FaqSection() {
 
   return (
     <section
+      id="faq"
       className="w-full flex flex-col items-center bg-[#eaf1fc] py-10 sm:py-12 md:py-16 lg:py-24 overflow-x-hidden"
       dir={isRTL ? "rtl" : undefined}
     >

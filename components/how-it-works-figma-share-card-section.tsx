@@ -58,12 +58,13 @@ export function HowItWorksFigmaShareCardSection() {
           >
             {t("howitworks.share.desc")}
           </p>
-          <button
-            className="px-6 sm:px-8 py-3 sm:py-4 border border-[#E5E7EB] rounded-[8px] sm:rounded-[18px] bg-white shadow font-semibold text-sm sm:text-base leading-normal text-[#232b38] hover:bg-[#f6fafd] transition"
+          <a
+            href="#"
+            className="text-[#627daf] font-medium text-sm sm:text-base hover:text-[#6025D9] hover:underline transition-all"
             style={{ fontFamily: "var(--font-primary, Inter, Arial, sans-serif)" }}
           >
-            {t("howitworks.share.cta")}
-          </button>
+            {t("howitworks.cta") || "Learn more"}
+          </a>
         </div>
       </div>
     </section>
