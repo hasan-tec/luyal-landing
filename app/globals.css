@@ -11,6 +11,8 @@
   font-display: swap;
 }
 
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
@@ -534,4 +536,10 @@ html[dir="ltr"] .sidebar-menu-footer button {
 
 html[dir="rtl"] {
   font-family: 'Avenir Arabic', sans-serif !important;
+}
+
+
+/* Only apply this font for RTL text */
+.rtl-font {
+  font-family: var(--font-primary, Inter, sans-serif) !important;
 }

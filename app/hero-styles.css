@@ -56,13 +56,14 @@ html[dir="rtl"] .pill-text {
   font-size: 15px; /* Slightly larger for Arabic */
 }
 
-/* Update heading sizes for better hierarchy */
+/* Heading container styling - BOLDER AND BIGGER */
 .heading-container {
   font-family: "GeistSans", var(--font-primary, sans-serif);
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-weight: 900 !important; /* Extra bold */
+  letter-spacing: -0.025em;
   color: #111827;
+  text-transform: uppercase; /* Match the design */
 }
 
 .heading-row {
@@ -70,13 +71,21 @@ html[dir="rtl"] .pill-text {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 28px;
+  font-size: 28px; /* Keep mobile size */
+}
+
+
+
+.heading-word {
+  display: inline-block;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 /* RTL-specific adjustments for heading */
 html[dir="rtl"] .heading-container {
   letter-spacing: normal;
-  font-weight: 700; /* Slightly less bold for Arabic */
+  font-weight: 700; /* Slightly less bold for Arabic but still heavy */
 }
 
 html[dir="rtl"] .heading-word {
@@ -136,10 +145,10 @@ html[dir="rtl"] .cta-button {
   font-size: 17px; /* Slightly larger for Arabic */
 }
 
-/* Responsive styles */
+/* Responsive styles - MUCH BIGGER on desktop */
 @media (min-width: 640px) {
   .heading-row {
-    font-size: 36px;
+    font-size: 38px; /* Bigger on small tablets */
   }
 
   .cta-button {
@@ -149,7 +158,7 @@ html[dir="rtl"] .cta-button {
 
 @media (min-width: 768px) {
   .heading-row {
-    font-size: 42px;
+    font-size: 46px; /* Bigger on tablets */
   }
 
   .subtitle-text {
@@ -163,10 +172,33 @@ html[dir="rtl"] .cta-button {
 
 @media (min-width: 1024px) {
   .heading-row {
-    font-size: 56px; /* Increased from 48px for more prominence */
+    font-size: 64 px; /* Much bigger on desktop */
   }
 
   .subtitle-text {
     font-size: 20px; /* Increased for better readability on desktop */
+    font-weight: 500;
   }
+}
+
+@media (min-width: 1280px) {
+  .heading-row {
+    font-size: 68px; /* Extra large on large screens */
+  }
+}
+
+
+/* Font weight for LTR */
+.ltr-font-weight {
+  font-family: "GeistSans", var(--font-primary, sans-serif);
+  line-height: 1.05;
+  font-weight: 900 !important;
+  letter-spacing: -0.025em;
+  color: #111827;
+  text-transform: uppercase;
+}
+
+/* Font weight for RTL */
+.rtl-font-weight {
+  font-weight: 700 !important;
 }

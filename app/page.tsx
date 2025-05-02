@@ -217,32 +217,26 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Main Heading - Using fixed dimensions and consistent styling */}
+          {/* Main Heading - BIGGER AND BOLDER */}
           <div className="text-center mb-6 sm:mb-8 md:mb-10 w-full max-w-[1200px] mx-auto">
-            <h1 className="heading-container">
-              <div className="heading-row">
-                <span className={`heading-word ${isRTL ? "ml-2" : "mr-2"}`}>{t("hero.customer")}</span>
-                <span className="heading-word text-[#5d7ab0]">{t("hero.loyalty")}</span>
-                <span className={`heading-word ${isRTL ? "mr-2" : "ml-2"}`}>{t("hero.programs")}</span>
-              </div>
-              <div className="heading-row mt-2">{t("hero.forRetention")}</div>
-            </h1>
-          </div>
+  <h1
+    className={`heading-container ${isRTL ? "rtl-font-weight" : "ltr-font-weight"}`}
+    style={isRTL ? {
+      fontFamily: "var(--font-primary, Inter, sans-serif)"
+    } : {}}
+  >
+    <div className="heading-row">
+      <span className={`heading-word ${isRTL ? "ml-2" : "mr-2"}`}>{t("hero.customer")}</span>
+      <span className="heading-word text-[#5d7ab0]">{t("hero.loyalty")}</span>
+      <span className={`heading-word ${isRTL ? "mr-2" : "ml-2"}`}>{t("hero.programs")}</span>
+    </div>
+    <div className="heading-row mt-2">{t("hero.forRetention")}</div>
+  </h1>
+</div>
 
-           {/* Subtitle - Bigger and more prominent */}
-           <div className="w-full max-w-[700px] mx-auto text-center mb-6 sm:mb-8">
-            <p
-              style={{
-                fontFamily: "var(--font-primary, Inter, sans-serif)",
-                fontSize: "20px",
-                lineHeight: 1.5,
-                color: "#4b5563",
-                fontWeight: 500,
-                "@media (minwidth: 768px)": { fontSize: "18px" },
-              }}
-            >
-              {t("hero.subtitle")}
-            </p>
+          {/* Subtitle - Fixed dimensions and consistent styling */}
+          <div className="w-full max-w-[700px] mx-auto text-center mb-6 sm:mb-8">
+            <p className="subtitle-text">{t("hero.subtitle")}</p>
           </div>
 
           {/* CTA Buttons - Fixed dimensions and consistent styling */}
