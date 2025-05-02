@@ -1,0 +1,44 @@
+/* Privacy Policy specific styles */
+.privacy-policy-section h2 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .privacy-policy-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .privacy-policy-section ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  .privacy-policy-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* RTL specific adjustments */
+  [dir="rtl"] .privacy-policy-section ul {
+    padding-right: 1.5rem;
+    padding-left: 0;
+  }
+  
+  [dir="rtl"] .privacy-policy-section h2,
+  [dir="rtl"] .privacy-policy-section h3,
+  [dir="rtl"] .privacy-policy-section h4,
+  [dir="rtl"] .privacy-policy-section p {
+    text-align: right;
+  }
+  
+  /* Font adjustments for Arabic */
+  [dir="rtl"] body {
+    font-family: "Avenir Arabic", sans-serif;
+  }
+  
+  /* Font adjustments for English */
+  [dir="ltr"] body {
+    font-family: var(--font-primary, Inter, sans-serif);
+  }
+  
