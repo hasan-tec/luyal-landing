@@ -138,21 +138,21 @@ export default function FooterFigma() {
           <div className="flex flex-col gap-1 sm:gap-2">
             
             <a
-              href="/#features"
+              href="#"
               className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
               style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
             >
               {t("footer.shopify") || "Shopify"}
             </a>
             <a
-              href="/#features"
+              href="/privacy-policy"
               className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
               style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
             >
               {t("footer.wordpress") || "WordPress"}
             </a>
             <a
-              href="/#contact"
+              href="#"
               className="font-normal text-sm sm:text-base leading-relaxed text-white hover:opacity-80 transition"
               style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
             >
