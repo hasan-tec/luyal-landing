@@ -12,8 +12,9 @@ import HowItWorksFigmaSection from "@/components/how-it-works-figma-section"
 import { HowItWorksFigmaTestimonialSection } from "@/components/how-it-works-figma-testimonial-section"
 import { HowItWorksFigmaPlansSection } from "@/components/how-it-works-figma-plans-section"
 import { FaqSection } from "@/components/faq-section"
-import  ContactSection  from "@/components/contact-section"
-import  FooterFigma  from "@/components/footer-figma"
+import ContactSection from "@/components/contact-section"
+import FooterFigma from "@/components/footer-figma"
+import "./hero-styles.css"
 
 export default function Home() {
   const { t, isRTL } = useLanguage()
@@ -22,20 +23,6 @@ export default function Home() {
   const announcements = [t("hero.announcement1"), t("hero.announcement2"), t("hero.announcement3")]
 
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight
-
-  // Custom heading style
-  const headingStyle = {
-    fontFamily: "'GeistSans'",
-    fontStyle: "normal",
-    fontWeight: "bolder",
-    fontSize: "72px",
-    lineHeight: "72px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "center",
-    letterSpacing: "-5.5px",
-    textTransform: "uppercase",
-  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -174,207 +161,97 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section with gradient background */}
       <main className="flex-grow relative overflow-hidden bg-white">
-        {/* Right gradient */}
-        <div
-          style={{
-            position: "absolute",
-            width: "1155px",
-            height: "678px",
-            left: "582.17px",
-            top: "-109px",
-            background: "linear-gradient(277.45deg, rgba(126, 161, 196, 0.55) 19.78%, rgba(255, 255, 255, 0.55) 57.1%)",
-            opacity: 0.5,
-            transform: "rotate(60deg)",
-            zIndex: 0,
-          }}
-        ></div>
+        {/* Figma-like gradient background */}
+        <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+          {/* Left blue blur: more oval, less tall, softer */}
+          <div
+            className="absolute"
+            style={{
+              left: "-8vw",
+              top: "8vh",
+              width: "38vw",
+              height: "28vw",
+              minWidth: 260,
+              minHeight: 160,
+              maxWidth: 600,
+              maxHeight: 400,
+              background: "radial-gradient(ellipse 60% 40% at 45% 55%, #7ea1c4 45%, transparent 100%)",
+              filter: "blur(60px)",
+              opacity: 0.48,
+              zIndex: 1,
+            }}
+          />
+          {/* Right blue blur: move it more to the left and down, less top-right */}
+          <div
+            className="absolute"
+            style={{
+              right: "10vw", // move away from the edge
+              top: "18vh", // move down
+              width: "22vw",
+              height: "22vw",
+              minWidth: 120,
+              minHeight: 120,
+              maxWidth: 340,
+              maxHeight: 340,
+              background: "radial-gradient(ellipse 55% 55% at 60% 40%, #7ea1c4 38%, transparent 100%)",
+              filter: "blur(38px)",
+              opacity: 0.38,
+              zIndex: 1,
+            }}
+          />
+        </div>
 
-        {/* Left gradient */}
-        <div
-          style={{
-            position: "absolute",
-            width: "760.84px",
-            height: "506.6px",
-            left: "-300px",
-            top: "200px",
-            background:
-              "linear-gradient(221.78deg, rgba(126, 161, 196, 0.55) 13.15%, rgba(255, 255, 255, 0.55) 55.27%)",
-            opacity: 0.5,
-            transform: "rotate(-84deg)",
-            zIndex: 0,
-          }}
-        ></div>
-
-        <div className="container mx-auto px-3 sm:px-4 pt-4 sm:pt-8 md:pt-16 pb-4 sm:pb-10 md:pb-20 relative z-10">
-          {/* Pill Highlight */}
-          <div className="flex justify-center mb-3 sm:mb-5">
-            <div className="inline-flex items-center px-3 sm:px-5 py-1.5 sm:py-2 bg-white border border-[#e5e7eb] rounded-full shadow-sm">
+        <div className="container mx-auto px-4 pt-6 sm:pt-8 md:pt-12 lg:pt-16 pb-6 sm:pb-8 md:pb-12 lg:pb-16 relative z-10">
+          {/* Pill Highlight - Fixed width and consistent sizing */}
+          <div className="flex justify-center mb-4 sm:mb-5 md:mb-6">
+            <div className="pill-container flex items-center px-4 py-2 bg-white border border-[#e5e7eb] rounded-full shadow-sm">
               <Image
                 src="/images/sparkling.png"
                 alt="Star"
                 width={16}
                 height={16}
-                className={`h-4 w-4 sm:h-5 sm:w-5 ${isRTL ? "ml-1.5 sm:ml-2" : "mr-1.5 sm:mr-2"} flex-shrink-0`}
+                className={`h-4 w-4 ${isRTL ? "ml-1.5" : "mr-1.5"} flex-shrink-0`}
               />
-              <span
-                style={{
-                  fontFamily: "Inter",
-                  fontStyle: "normal",
-                  fontSize: "14px",
-                  lineHeight: "20px",
-                }}
-              >
-                {t("hero.announcement1")}
-              </span>
+              <span className="pill-text">{t("hero.announcement1")}</span>
             </div>
           </div>
 
-          {/* Main Heading - Improved for consistent display across devices */}
-          <div className="text-center mb-3 sm:mb-6 md:mb-10 w-full">
-            <h1 className="font-bold text-[#111827] leading-tight tracking-tight w-full mx-auto">
-              {isRTL ? (
-                <>
-                  <div className="text-[2rem] xs:text-[2.25rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] inline-flex flex-wrap justify-center">
-                    <span className="inline-block ml-2 my-1">{t("hero.customer")}</span>
-                    <span className="loyalty-box inline-block my-1 mx-1">
-                      <span className="font-bold">{t("hero.loyalty")}</span>
-                    </span>
-                    <span className="inline-block mr-2 my-1">{t("hero.programs")}</span>
-                  </div>
-                  <div className="text-[2rem] xs:text-[2.25rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.5rem] mt-1 sm:mt-2">
-                    {t("hero.forRetention")}
-                  </div>
-                </>
-              ) : (
-                <div
-                  className="english-heading"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    ...headingStyle,
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      flexWrap: "wrap",
-                      width: "100%",
-                      fontSize: "72px",
-                      lineHeight: "72px",
-                      letterSpacing: "-5.5px",
-                      textTransform: "uppercase",
-                      fontFamily: "'GeistSans'",
-                      fontWeight: "bolder",
-                      position: "relative",
-                    }}
-                  >
-                    <span
-                      style={{
-                        display: "inline-block",
-                        margin: "0 8px",
-                        fontFamily: "'GeistSans'",
-                        fontWeight: "bolder",
-                        fontSize: "72px",
-                        lineHeight: "72px",
-                        letterSpacing: "-5.5px",
-                      }}
-                    >
-                      {t("hero.customer")}
-                    </span>
-                    <span
-                      className="loyalty-box"
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        padding: "0px 8px",
-                        isolation: "isolate",
-                        position: "relative",
-                        width: "301px",
-                        height: "98px",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontFamily: "'GeistSans'",
-                          fontWeight: "bolder",
-                          color: "#5d7ab0",
-                          fontSize: "72px",
-                          lineHeight: "72px",
-                          letterSpacing: "-5.5px",
-                          position: "relative",
-                          zIndex: 1,
-                        }}
-                      >
-                        {t("hero.loyalty")}
-                      </span>
-                      <span
-                        style={{
-                          position: "absolute",
-                          left: 0,
-                          right: 0,
-                          top: 0,
-                          bottom: 0,
-                          border: "1.5px solid #627DAF",
-                          zIndex: 0,
-                        }}
-                      ></span>
-                    </span>
-                    <span
-                      style={{
-                        display: "inline-block",
-                        margin: "0 8px",
-                        fontFamily: "'GeistSans'",
-                        fontWeight: "bolder",
-                        fontSize: "72px",
-                        lineHeight: "72px",
-                        letterSpacing: "-5.5px",
-                      }}
-                    >
-                      {t("hero.programs")}
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      marginTop: "8px",
-                      fontSize: "72px",
-                      lineHeight: "72px",
-                      letterSpacing: "-5.5px",
-                      textTransform: "uppercase",
-                      fontFamily: "'GeistSans'",
-                      fontWeight: "bolder",
-                    }}
-                  >
-                    {t("hero.forRetention")}
-                  </div>
-                </div>
-              )}
+          {/* Main Heading - Using fixed dimensions and consistent styling */}
+          <div className="text-center mb-6 sm:mb-8 md:mb-10 w-full max-w-[1200px] mx-auto">
+            <h1 className="heading-container">
+              <div className="heading-row">
+                <span className={`heading-word ${isRTL ? "ml-2" : "mr-2"}`}>{t("hero.customer")}</span>
+                <span className="heading-word text-[#5d7ab0]">{t("hero.loyalty")}</span>
+                <span className={`heading-word ${isRTL ? "mr-2" : "ml-2"}`}>{t("hero.programs")}</span>
+              </div>
+              <div className="heading-row mt-2">{t("hero.forRetention")}</div>
             </h1>
           </div>
 
-          {/* Subtitle */}
-          <div className="w-full mx-auto text-center mb-4 sm:mb-6 md:mb-10 px-1 sm:px-4">
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#4b5563] max-w-3xl mx-auto">
+           {/* Subtitle - Bigger and more prominent */}
+           <div className="w-full max-w-[700px] mx-auto text-center mb-6 sm:mb-8">
+            <p
+              style={{
+                fontFamily: "var(--font-primary, Inter, sans-serif)",
+                fontSize: "20px",
+                lineHeight: 1.5,
+                color: "#4b5563",
+                fontWeight: 500,
+                "@media (minwidth: 768px)": { fontSize: "18px" },
+              }}
+            >
               {t("hero.subtitle")}
             </p>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
-            <button className="bg-[#627daf] text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-[#5670a0] transition-colors flex items-center font-medium w-full sm:w-auto justify-center text-sm sm:text-base">
+          {/* CTA Buttons - Fixed dimensions and consistent styling */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+            <button className="cta-button primary-cta">
               {t("hero.startFree")}
-              <ArrowIcon className={`h-4 w-4 sm:h-5 sm:w-5 ${isRTL ? "mr-1.5 sm:mr-2" : "ml-1.5 sm:ml-2"}`} />
+              <ArrowIcon className={`h-5 w-5 ${isRTL ? "mr-1.5" : "ml-1.5"}`} />
             </button>
-            <button className="border border-[#e5e7eb] bg-white text-[#111827] px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-gray-50 transition-colors font-medium w-full sm:w-auto text-sm sm:text-base">
-              {t("hero.learnMore")}
-            </button>
+            <button className="cta-button secondary-cta">{t("hero.learnMore")}</button>
           </div>
         </div>
       </main>
@@ -390,7 +267,7 @@ export default function Home() {
       <HowItWorksFigmaPlansSection />
       <FaqSection />
       <ContactSection />
-      <FooterFigma/>
+      <FooterFigma />
     </div>
   )
 }

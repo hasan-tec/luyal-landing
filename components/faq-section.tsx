@@ -1,9 +1,11 @@
-import { useLanguage } from "@/context/language-context";
-import React, { useState } from "react";
+"use client"
+
+import { useLanguage } from "@/context/language-context"
+import { useState } from "react"
 
 export function FaqSection() {
-  const { t, isRTL } = useLanguage();
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { t, isRTL } = useLanguage()
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const faqData = [
     { q: t("faq.q1"), a: t("faq.a1") },
@@ -13,31 +15,34 @@ export function FaqSection() {
     { q: t("faq.q5"), a: t("faq.a5") },
     { q: t("faq.q6"), a: t("faq.a6") },
     { q: t("faq.q7"), a: t("faq.a7") },
-  ];
+  ]
 
   const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+    setOpenIndex(openIndex === index ? null : index)
+  }
 
   return (
     <section
-      className="w-full flex flex-col items-center bg-[#eaf1fc] py-12 md:py-16 lg:py-[96px] overflow-x-hidden"
+      className="w-full flex flex-col items-center bg-[#eaf1fc] py-10 sm:py-12 md:py-16 lg:py-24 overflow-x-hidden"
       dir={isRTL ? "rtl" : undefined}
     >
-      <div className="w-full max-w-[1240px] flex flex-col items-center gap-8 md:gap-10 lg:gap-[60px] px-4 md:px-6 lg:px-0">
+      <div className="w-full max-w-[1240px] flex flex-col items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 px-4 sm:px-6 md:px-8 lg:px-4">
         {/* Responsive Heading */}
-        <div className="flex flex-col items-center gap-2 md:gap-3 w-full max-w-full md:max-w-[80%] lg:max-w-[600px]">
+        <div className="flex flex-col items-center gap-2 w-full max-w-full md:max-w-[80%] lg:max-w-[600px]">
           <h2
-            className="font-vc-nudge font-medium text-[2rem] xs:text-[2.5rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[3.5rem] xl:text-[56px] leading-[1.15] text-[#111827] text-center break-words"
+            className="font-vc-nudge font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-[#111827] text-center"
             style={{
-              letterSpacing: isRTL ? "normal" : "-2.5px",
-              wordBreak: "break-word",
+              letterSpacing: "-0.02em",
               fontWeight: 500,
+              fontFamily: "var(--font-primary, Inter, sans-serif)",
             }}
           >
             {t("faq.heading")}
           </h2>
-          <p className="font-inter font-medium text-[15px] xs:text-[16px] md:text-[18px] leading-[1.5] md:leading-[22px] text-[#4B5563] text-center">
+          <p
+            className="font-medium text-sm sm:text-base md:text-lg leading-normal text-[#4B5563] text-center"
+            style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
+          >
             {t("faq.subheading")}
           </p>
         </div>
@@ -48,23 +53,35 @@ export function FaqSection() {
             <div key={idx} className="border-t last:border-b border-[#9595951A]">
               <div
                 onClick={() => toggleFaq(idx)}
-                className="flex flex-row items-center justify-between w-full px-1 py-4 md:py-5 lg:py-[21px] cursor-pointer"
+                className="flex flex-row items-center justify-between w-full px-1 py-3 sm:py-4 md:py-5 cursor-pointer"
               >
                 <span
-                  className={`font-vc-nudge font-semibold text-[16px] md:text-[18px] leading-[1.3] text-[#111827] opacity-90 flex-grow truncate ${
-                    isRTL ? "pl-4 md:pl-4" : "pr-4 md:pr-4"
+                  className={`font-medium text-sm sm:text-base md:text-lg leading-normal text-[#111827] opacity-90 flex-grow pr-4 ${
+                    isRTL ? "pl-4" : "pr-4"
                   }`}
-                  style={{ letterSpacing: isRTL ? "normal" : "-0.5px" }}
+                  style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
                 >
                   {item.q}
                 </span>
                 <div className="flex-shrink-0">
                   {openIndex === idx ? (
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      className="w-4 h-4 sm:w-[18px] sm:h-[18px]"
+                    >
                       <path d="M3 9H15" stroke="#232525" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   ) : (
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      className="w-4 h-4 sm:w-[18px] sm:h-[18px]"
+                    >
                       <path d="M9 3V15" stroke="#232525" strokeWidth="1.5" strokeLinecap="round" />
                       <path d="M3 9H15" stroke="#232525" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
@@ -72,7 +89,10 @@ export function FaqSection() {
                 </div>
               </div>
               {openIndex === idx && (
-                <div className="px-1 pb-4 md:pb-5 font-inter text-[14px] md:text-[16px] leading-[1.6] text-[#4B5563]">
+                <div
+                  className="px-1 pb-3 sm:pb-4 md:pb-5 text-xs sm:text-sm md:text-base leading-relaxed text-[#4B5563]"
+                  style={{ fontFamily: "var(--font-primary, Inter, sans-serif)" }}
+                >
                   {item.a}
                 </div>
               )}
@@ -81,5 +101,5 @@ export function FaqSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

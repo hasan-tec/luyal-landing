@@ -1,0 +1,172 @@
+/* Import GeistSans font for consistent rendering */
+@font-face {
+  font-family: "GeistSans";
+  font-display: swap;
+  src: url("/fonts/GeistSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeistSans";
+  font-display: swap;
+  src: url("/fonts/GeistSans-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Fix Arabic font rendering */
+html[dir="rtl"] {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure consistent font sizes between languages */
+html[dir="rtl"] h1,
+html[dir="rtl"] p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Prevent text overflow on small screens */
+@media (max-width: 640px) {
+  h1 {
+    word-break: break-word;
+    hyphens: auto;
+  }
+}
+
+/* Pill container styling */
+.pill-container {
+  width: fit-content;
+  max-width: 90%;
+  min-height: 36px;
+  min-width: 280px;
+}
+
+.pill-text {
+  font-family: "GeistSans", var(--font-primary, sans-serif);
+  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* RTL-specific adjustments for pill */
+html[dir="rtl"] .pill-text {
+  font-size: 15px; /* Slightly larger for Arabic */
+}
+
+/* Update heading sizes for better hierarchy */
+.heading-container {
+  font-family: "GeistSans", var(--font-primary, sans-serif);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+/* RTL-specific adjustments for heading */
+html[dir="rtl"] .heading-container {
+  letter-spacing: normal;
+  font-weight: 700; /* Slightly less bold for Arabic */
+}
+
+html[dir="rtl"] .heading-word {
+  font-size: 110%; /* Slightly larger for Arabic to match visual weight */
+}
+
+/* Subtitle text adjustments */
+.subtitle-text {
+  font-family: "GeistSans", var(--font-primary, sans-serif);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* RTL-specific adjustments for subtitle */
+html[dir="rtl"] .subtitle-text {
+  font-size: 17px; /* Slightly larger for Arabic */
+  line-height: 1.6; /* Slightly more line height for Arabic */
+}
+
+/* CTA button styling */
+.cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "GeistSans", var(--font-primary, sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 6px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.primary-cta {
+  background-color: #627daf;
+  color: white;
+}
+
+.primary-cta:hover {
+  background-color: #5670a0;
+}
+
+.secondary-cta {
+  background-color: white;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.secondary-cta:hover {
+  background-color: #f9fafb;
+}
+
+/* RTL-specific adjustments for buttons */
+html[dir="rtl"] .cta-button {
+  font-size: 17px; /* Slightly larger for Arabic */
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+  .heading-row {
+    font-size: 36px;
+  }
+
+  .cta-button {
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading-row {
+    font-size: 42px;
+  }
+
+  .subtitle-text {
+    font-size: 18px;
+  }
+
+  html[dir="rtl"] .subtitle-text {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-row {
+    font-size: 56px; /* Increased from 48px for more prominence */
+  }
+
+  .subtitle-text {
+    font-size: 20px; /* Increased for better readability on desktop */
+  }
+}
