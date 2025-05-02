@@ -1,0 +1,72 @@
+/* Terms and Conditions specific styles */
+.terms-section h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  .terms-section h3 {
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .terms-section p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    color: #4b5563;
+  }
+  
+  .terms-section ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  .terms-section li {
+    margin-bottom: 0.625rem;
+    line-height: 1.7;
+  }
+  
+  .terms-section strong {
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  /* RTL specific adjustments */
+  [dir="rtl"] .terms-section ul {
+    padding-right: 1.5rem;
+    padding-left: 0;
+  }
+  
+  [dir="rtl"] .terms-section h2,
+  [dir="rtl"] .terms-section h3,
+  [dir="rtl"] .terms-section p {
+    text-align: right;
+  }
+  
+  /* Font adjustments for Arabic */
+  [dir="rtl"] body {
+    font-family: "Avenir Arabic", sans-serif;
+  }
+  
+  /* Font adjustments for English */
+  [dir="ltr"] body {
+    font-family: var(--font-primary, Inter, sans-serif);
+  }
+  
+  /* Improved spacing for mobile */
+  @media (max-width: 768px) {
+    .terms-section h2 {
+      margin-bottom: 1.25rem;
+    }
+  
+    .terms-section h3 {
+      margin-bottom: 1rem;
+    }
+  
+    .terms-section p {
+      margin-bottom: 1rem;
+    }
+  }
+  
