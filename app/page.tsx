@@ -24,6 +24,35 @@ export default function Home() {
 
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight
 
+  // Smooth scroll for anchor links
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault()
+      const id = href.replace("#", "")
+      const el = document.getElementById(id)
+      if (el) {
+        // Custom smooth scroll (slower and more visible)
+        const y = el.getBoundingClientRect().top + window.pageYOffset
+        const startY = window.scrollY
+        const diff = y - startY
+        let start: number | null = null
+        const duration = 1400 // ms, slower for more visible effect
+        function step(timestamp: number) {
+          if (!start) start = timestamp
+          const progress = Math.min((timestamp - start) / duration, 1)
+          window.scrollTo(0, startY + diff * easeInOutQuad(progress))
+          if (progress < 1) {
+            window.requestAnimationFrame(step)
+          }
+        }
+        function easeInOutQuad(t: number) {
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
+        }
+        window.requestAnimationFrame(step)
+      }
+    }
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Announcement Bar */}
@@ -54,36 +83,42 @@ export default function Home() {
         <nav className="hidden xl:flex items-center justify-center gap-4 xl:gap-6 absolute left-1/2 transform -translate-x-1/2">
           <a
             href="#"
+            onClick={e => handleSmoothScroll(e, "#")}
             className="text-[#111827] font-semibold border-b-2 border-[#111827] font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.home")}
           </a>
           <a
             href="#features"
+            onClick={e => handleSmoothScroll(e, "#features")}
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.features")}
           </a>
           <a
             href="#pricing"
+            onClick={e => handleSmoothScroll(e, "#pricing")}
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.pricing")}
           </a>
           <a
             href="#howitworks"
+            onClick={e => handleSmoothScroll(e, "#howitworks")}
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.solution")}
           </a>
           <a
             href="#faq"
+            onClick={e => handleSmoothScroll(e, "#faq")}
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.faq")}
           </a>
           <a
             href="#contact"
+            onClick={e => handleSmoothScroll(e, "#contact")}
             className="text-[#4b5563] hover:text-[#111827] font-semibold font-inter text-base leading-6 whitespace-nowrap"
           >
             {t("nav.contact")}
