@@ -2,6 +2,7 @@
 
 
 import Image from "next/image"
+import Link from "next/link"
 import { useLanguage } from "@/context/language-context"
 import MobileNav from "@/components/mobile-navbar"
 import LanguageSwitcher from "@/components/language-switcher"
@@ -23,20 +24,32 @@ export default function TermsAndConditions() {
       {/* Header */}
            {/* Navigation - Restructured with 3 sections */}
                  <header className="container mx-auto px-4 py-4 md:py-5 flex items-center justify-between relative">
-                   {/* Logo - Left Section */}
-                   <div className="flex items-center z-10">
-                     <div className={`${isRTL ? "ml-2" : "mr-2"}`}>
-                       <Image
-                         src="/images/logo-gradient.png"
-                         alt="Luyal Logo"
-                         width={40}
-                         height={40}
-                         className="h-8 w-8 md:h-10 md:w-10"
-                         priority
-                       />
-                     </div>
-                     <span className="text-[#111827] text-xl md:text-2xl font-bold">{isRTL ? "لويال" : "Luyal"}</span>
-                   </div>
+                    {/* Logo - Left Section */}
+                    <div className="flex items-center z-10">
+                      <Link
+                      href="/"
+                      tabIndex={0}
+                      aria-label="Home"
+                      className={`flex items-center ${isRTL ? "ml-2" : "mr-2"}`}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                        window.location.href = "/";
+                        }
+                      }}
+                      >
+                      <Image
+                        src="/images/logo-gradient.png"
+                        alt="Luyal Logo"
+                        width={40}
+                        height={40}
+                        className="h-8 w-8 md:h-10 md:w-10"
+                        priority
+                      />
+                      <span className="text-[#111827] text-xl md:text-2xl font-bold ml-2">
+                        {isRTL ? "لويال" : "Luyal"}
+                      </span>
+                      </Link>
+                    </div>
            
                    {/* Navigation Links - Center Section */}
                    <nav className="hidden xl:flex items-center justify-center gap-4 xl:gap-6 absolute left-1/2 transform -translate-x-1/2">
